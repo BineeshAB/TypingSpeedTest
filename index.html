@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Typing Speed Test</title>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/indexstyle.css">
+</head>
+<body>
+	<div class="header">
+		<a href="index.html">
+			<span style="color: #FF5733">Typing</span><span style="color: #C70039">Test</span>
+		</a>
+	</div>
+	<div class="container">
+		<div class="title">
+			Typing Speed Test
+		</div>
+		<form method="post" action="">
+			<div class="question" id="question">
+			</div>
+			<div class="answer">
+				<textarea name="message" id="message" class="msg" placeholder="Start Typing" disabled></textarea>
+			</div>
+			<div class="button">
+				<input type="button" name="btn" value="Start" class="btn" id="btn">
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">
+
+		const setOfWords = [
+			"The five boxing wizards jump quickly.",
+			"Quick fox jumps nightly above wizard.",
+			"Fox dwarves chop my talking quiz job.",
+			"Pack my box with five dozen liquor jugs.",
+			"When zombies arrive, quickly fax judge Pat.",
+			"The quick brown fox jumps over the lazy dog.",
+			"Jacky can now give six big tips from the old quiz.",
+			"All questions asked by five watched experts amaze the judge.",
+			"This website is made my Bineesh, its email address is bineeshalakkal22@gmail.com."
+		];
+		const words  = document.getElementById("question");
+		const typedWords = document.getElementById("message");
+		const btn = document.getElementById('btn');
+		let startTime, endTime, errorWords, speed;
+
+		const startTest = () => {
+			let randomNumber = Math.floor(Math.random()*setOfWords.length);
+			words.innerText = setOfWords[randomNumber];
+			let date = new Date;
+			startTime = date.getTime();
+			btn.value = "Done";
+			typedWords.disabled = false;
+
+			typedWords.addEventListener('keypress', function (e) {
+			    if (e.key === 'Enter') {
+			    	endTest();
+			    }
+			});
+		}
+
+		const endTest = () => {
+			let date = new Date();
+			endTime = date.getTime();
+			let totalTime = ((endTime - startTime)/1000);
+			btn.value ="Start";
+
+			let totalStr = typedWords.value;
+			let wordCount = wordCounter(totalStr);
+
+			speed = Math.round((wordCount/totalTime)*60);
+
+			let finalMsg = "Your speed is " + speed + " words per mintues.\n";
+			finalMsg += compareWords(words.innerText, totalStr);
+			words.innerText = finalMsg;
+
+			typedWords.value = typedWords.defaultValue;
+			typedWords.disabled = true;
+		}
+
+		const compareWords = (str1, str2) =>{
+			let word1 = str1.split(" ");
+			let word2 = str2.split(" ");
+			let count = 0;
+
+			word1.forEach(function(item, index){
+				if (item == word2[index]) {
+					count++;
+				}
+			})
+
+			errorWords = (word1.length - count);
+
+			let avg = speed - errorWords;
+
+			return(count + " correct out of " + word1.length + " words and the total number of error are " + errorWords + ". And So your avarage  speed is " + avg + " words per mintues.");
+		}
+
+		const wordCounter = (str) =>{
+			let  response = str.split(" ").length;
+			return response;
+		}
+
+		btn.addEventListener('click', function(){
+			if (this.value == "Start") {
+				startTest();
+			}
+			else if (this.value == "Done") {
+				endTest();
+			}
+		});
+
+	</script>
+</body>
+</html>
