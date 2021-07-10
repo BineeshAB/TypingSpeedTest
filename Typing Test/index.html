@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Test - typingtest</title>
+
+		<link rel="stylesheet" href="css/bootstrap.css">
+
+		<link rel="stylesheet" href="css/style.css">
+
+		<link rel="stylesheet" href="css/header.css">
+
+		<link rel="stylesheet" href="css/main.css">
+		
+	</head>
+	<body>
+		<div class="header">
+			<div class="container">
+				<div class="logo">typingtest</div>
+				<div id="setGoal" class="setGoal"></div>
+			</div>
+		</div>
+		<section class="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-4 col-sm-12">
+						<div class="left">
+							<input type="button" name="btn" value="Start" class="btn" id="btn">
+							<div class="rules">
+								Click "Start" button for the typing test.<br/><br />
+								Click the "Done" button aftet the test.<br /><br />
+								<p>To learn the How to Type Click the "Learn" button.</p>
+								<a href="learn/lessonone.html">Learn</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9 col-md-8 col-sm-12">
+						<div class="right">
+							<div class="top">
+								<p class="question" id="question">
+									ALL THE BEST FOR THE TEST
+								</p>
+							</div>
+							<div class="bottom">
+								<textarea name="message" id="message" class="msg" placeholder="Start Typing" disabled></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="js/test.js"></script>
+		<script src="js/goal.js"></script>
+	</body>
+</html>
