@@ -1,12 +1,12 @@
 const setOfWords = [
-    "The five boxing wizards jump quickly.",
-    "Quick fox jumps nightly above wizard.",
-    "Fox dwarves chop my talking quiz job.",
-    "Pack my box with five dozen liquor jugs.",
-    "When zombies arrive, quickly fax judge pat.",
-    "The quick brown fox jumps over the lazy dog.",
-    "Jacky can now give six big tips from the old quiz.",
-    "All questions asked by five watched experts amaze the judge."
+    "The five boxing wizards jump quickly.\n",
+    "Quick fox jumps nightly above wizard.\n",
+    "Fox dwarves chop my talking quiz job.\n",
+    "Pack my box with five dozen liquor jugs.\n",
+    "When zombies arrive, quickly fax judge pat.\n",
+    "The quick brown fox jumps over the lazy dog.\n",
+    "Jacky can now give six big tips from the old quiz.\n",
+    "All questions asked by five watched experts amaze the judge.\n"
 ];
 const words  = document.getElementById("question");
 const typedWords = document.getElementById("message");
@@ -67,8 +67,17 @@ const wordCounter = (str) =>{
 btn.addEventListener('click', function(){
     if (this.value == "Start") {
         startTest();
+        typedWords.focus();
     }
     else if (this.value == "Done") {
+        typedWords.value = typedWords.value + "\n";
+        endTest();
+    }
+});
+
+typedWords.addEventListener('keyup', (event) => {
+    if (event.keyCode == 13) {
+        event.preventDefault();
         endTest();
     }
 });
