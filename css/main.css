@@ -1,0 +1,99 @@
+.main{
+	padding: 50px 0;
+}
+.left{
+	padding: 20px;
+	width: 100%;
+	height: 75vh;
+	background: lavender;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+.rules{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.4rem;
+}
+.rules a{
+	width: max-content;
+	display: block;
+	padding: 5px 20px;
+	background: skyblue;
+	border: 2px solid #000;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	border-radius: 5px;
+}
+.right{
+	padding: 20px;
+	width: 100%;
+	height: 75vh;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+.top{
+	width: 100%;
+	height: auto;
+	margin-bottom: 0px;
+	overflow: auto;
+}
+.top p{
+	padding: 5px 20px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.5rem;
+	letter-spacing: .15rem;
+	line-height: 2.5rem;
+	user-select: none;
+}
+.bottom{
+	width: 100%;
+	height: 45%;
+}
+.bottom .msg{
+	width: 100%;
+	height: 100%;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.5rem;
+	letter-spacing: .15rem;
+	line-height: 2.5rem;
+	outline: none;
+	resize: none;
+	border-radius: 5px;
+	padding: 5px 20px;
+}
+.bottom .msg:focus{
+	border: 2px solid #000;
+}
+.btn{
+	width: 100%;
+	padding: 0px;
+	text-align: center;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.9rem;
+	margin-bottom: 30px;	
+	border: 2px solid #000;
+	border-radius: 5px;
+	background: skyblue;
+	outline: none;
+}
+form{
+	margin-bottom: 30px;
+}
+@media(max-width: 1200px){
+}
+@media(max-width: 992px){
+}
+@media(max-width: 768px){
+}
+@media(max-width: 540px){
+	.left, .right{
+		height: auto;
+		margin-bottom: 50px
+	}
+	.bottom .msg{
+		min-height: 300px;
+	}
+}
+@media(max-height: 540px){
+}
